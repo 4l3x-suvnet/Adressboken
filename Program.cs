@@ -9,20 +9,20 @@ while (true)
     Console.ForegroundColor = ConsoleColor.Yellow;
     Console.WriteLine($"~: ADRESSBOKEN ({numberOfPeopleInList} personer, {contacts.Length} tecken) :~\n");
     Console.ResetColor();
-    Console.WriteLine("[V]isa personer");
-    Console.WriteLine("[L]ägg till person");
-    Console.WriteLine("\n[A]vsluta [R]ensa adressboken");
+    Console.WriteLine("1) Visa personer");
+    Console.WriteLine("2) Lägg till person");
+    Console.WriteLine("\nQ) Avsluta 3) Rensa adressboken");
 
     // Console.Write("\nVal: ");
     char choice = Console.ReadKey(true).KeyChar;
 
-    if (choice == 'v')
+    if (choice == '1')
     {
         Console.Clear();
         Console.WriteLine(Environment.NewLine + contacts + Environment.NewLine + (contacts.Split("\n").Length - 1) + " personer totalt");
         Console.ReadKey();
     }
-    else if (choice == 'l')
+    else if (choice == '2')
     {
         Console.Clear();
         Console.Write("\nNamn: ");
@@ -33,7 +33,7 @@ while (true)
             numberOfPeopleInList++;
         }
     }
-    else if (choice == 'r')
+    else if (choice == '3')
     {
         Console.WriteLine("\nÄr du säker på att du vill rensa adressboken? Detta går inte att ångra! (j/n)");
         choice = Console.ReadKey(true).KeyChar;
@@ -43,6 +43,6 @@ while (true)
             numberOfPeopleInList = 0;
         }
     }
-    else if (choice == 'a') Environment.Exit(0);
+    else if (choice == 'q') Environment.Exit(0);
 }
 // Test
